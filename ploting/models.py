@@ -16,6 +16,17 @@ class Plot(models.Model):
         ('NOT INTERESTED', 'not interested'),
     )
     initial_feedback = models.CharField(max_length=60, choices=INITIAL_FEEDBACK)
+
+    STATUS = (
+        ('PREPURCHASE', 'Pre-Purchase'),
+        ('PURCHASED', 'Purchase'),
+        ('SOLD', 'Sold'),
+    )
+    
+ 
+    initial_feedback = models.CharField(max_length=60, choices=INITIAL_FEEDBACK)
+
+    status = models.CharField(max_length=60, choices=STATUS)
     initial_contact_1 =  models.CharField(max_length=256 , blank=True)
     initial_contact_2 =  models.CharField(max_length=256 , blank=True)
     initial_contact_3 =  models.CharField(max_length=256 , blank=True)
@@ -55,7 +66,7 @@ class Plot(models.Model):
             return format_html('<img src="{}" width="{}" height="{}">'.format(_initial_information1.url, _initial_information1.width, _initial_information1.height))
         return ""     
 
-    
+    initial_information_text = models.TextField(null=True, blank=True)
 
     agreement = models.ImageField(upload_to='post/thumbnail/%Y/%m/%d/', null=True, blank=True)
     
@@ -139,7 +150,8 @@ class Plot(models.Model):
                                    quality=100)
             return format_html('<img src="{}" width="{}" height="{}">'.format(_first_payment_cheque.url, _first_payment_cheque.width, _first_payment_cheque.height))
         return "" 
-
+    
+    first_payment_cheque_text = models.TextField(null=True, blank=True)
     second_payment_cheque = models.ImageField(upload_to='post/thumbnail/%Y/%m/%d/', null=True, blank=True)
     
     @property
@@ -153,6 +165,7 @@ class Plot(models.Model):
             return format_html('<img src="{}" width="{}" height="{}">'.format(_second_payment_cheque.url, _second_payment_cheque.width, _second_payment_cheque.height))
         return ""     
 
+    second_payment_cheque_text = models.TextField(null=True, blank=True)
     third_payment_cheque = models.ImageField(upload_to='post/thumbnail/%Y/%m/%d/', null=True, blank=True)
     
     @property
@@ -166,7 +179,7 @@ class Plot(models.Model):
             return format_html('<img src="{}" width="{}" height="{}">'.format(_third_payment_cheque.url, _third_payment_cheque.width, _third_payment_cheque.height))
         return ""
 
-
+    third_payment_cheque_text = models.TextField(null=True, blank=True)
     mutuation_text = models.TextField(null=True, blank=True)
 
 
