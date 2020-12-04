@@ -118,7 +118,18 @@ class PlotAdmin(admin.ModelAdmin):
 
 
 
-    readonly_fields = ('initial_information_preview' , 'initial_information1_preview' , 'agreement_preview' , 'agreement1_preview' , 'agreement2_preview' , 'agreement3_preview' , 'agreement4_preview' ,
+    readonly_fields = ('seller_photo_preview' ,
+
+    'id_or_passport_page_1_preview',
+
+    'id_or_passport_page_2_preview',
+
+    'id_or_passport_page_3_preview',
+  
+    'relative_id_or_passport_page_1_preview',
+    
+    'relative_id_or_passport_page_2_preview',
+        'initial_information_preview' , 'initial_information1_preview' , 'agreement_preview' , 'agreement1_preview' , 'agreement2_preview' , 'agreement3_preview' , 'agreement4_preview' ,
 
         'first_payment_cheque_preview' ,
         'second_payment_cheque_preview' ,
