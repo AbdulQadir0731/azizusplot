@@ -11,6 +11,7 @@ class PlotAdmin(admin.ModelAdmin):
     fields = ('name' ,
     'initial_feedback' ,
     'seller_photo' ,
+    'seller_photo_preview' ,
     'id_or_passport_page_1',
     'id_or_passport_page_1_preview',
     'id_or_passport_page_2',
