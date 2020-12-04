@@ -8,7 +8,81 @@ from django.utils.html import format_html
 
 class Plot(models.Model):
     name = models.CharField(max_length=30)
+    seller_photo = models.ImageField(upload_to='post/thumbnail/%Y/%m/%d/', null=True, blank=True)
+    @property
+    def seller_photo_preview(self):
+        if self.seller_photo:
+            _seller_photo = get_thumbnail(self.seller_photo,
+                                   '300x300',
+                                   upscale=False,
+                                   crop=False,
+                                   quality=100)
+            return format_html('<img src="{}" width="{}" height="{}">'.format(_seller_photo.url, _seller_photo.width, _seller_photo.height))
+        return ""
 
+
+    id_or_passport_page_1 = models.ImageField(upload_to='post/thumbnail/%Y/%m/%d/', null=True, blank=True)
+    @property
+    def id_or_passport_page_1_preview(self):
+        if self.id_or_passport_page_1:
+            _id_or_passport_page_1 = get_thumbnail(self.id_or_passport_page_1,
+                                   '300x300',
+                                   upscale=False,
+                                   crop=False,
+                                   quality=100)
+            return format_html('<img src="{}" width="{}" height="{}">'.format(_id_or_passport_page_1.url, _id_or_passport_page_1.width, _id_or_passport_page_1.height))
+        return "" 
+
+
+    id_or_passport_page_2 = models.ImageField(upload_to='post/thumbnail/%Y/%m/%d/', null=True, blank=True)
+    @property
+    def id_or_passport_page_2_preview(self):
+        if self.id_or_passport_page_2:
+            _id_or_passport_page_2 = get_thumbnail(self.id_or_passport_page_2,
+                                   '300x300',
+                                   upscale=False,
+                                   crop=False,
+                                   quality=100)
+            return format_html('<img src="{}" width="{}" height="{}">'.format(_id_or_passport_page_2.url, _id_or_passport_page_2.width, _id_or_passport_page_2.height))
+        return ""
+
+    id_or_passport_page_3 = models.ImageField(upload_to='post/thumbnail/%Y/%m/%d/', null=True, blank=True)
+    @property
+    def id_or_passport_page_3_preview(self):
+        if self.id_or_passport_page_3:
+            _id_or_passport_page_3 = get_thumbnail(self.id_or_passport_page_3,
+                                   '300x300',
+                                   upscale=False,
+                                   crop=False,
+                                   quality=100)
+            return format_html('<img src="{}" width="{}" height="{}">'.format(_id_or_passport_page_3.url, _id_or_passport_page_3.width, _id_or_passport_page_3.height))
+        return ""
+
+    relative_id_or_passport_page_1 = models.ImageField(upload_to='post/thumbnail/%Y/%m/%d/', null=True, blank=True)
+    @property
+    def relative_id_or_passport_page_1_preview(self):
+        if self.relative_id_or_passport_page_1:
+            _relative_id_or_passport_page_1 = get_thumbnail(self.relative_id_or_passport_page_1,
+                                   '300x300',
+                                   upscale=False,
+                                   crop=False,
+                                   quality=100)
+            return format_html('<img src="{}" width="{}" height="{}">'.format(_relative_id_or_passport_page_1.url, _relative_id_or_passport_page_1.width, _relative_id_or_passport_page_1.height))
+        return "" 
+
+
+    relative_id_or_passport_page_2 = models.ImageField(upload_to='post/thumbnail/%Y/%m/%d/', null=True, blank=True)
+    @property
+    def relative_id_or_passport_page_2_preview(self):
+        if self.relative_id_or_passport_page_2:
+            _relative_id_or_passport_page_2 = get_thumbnail(self.relative_id_or_passport_page_2,
+                                   '300x300',
+                                   upscale=False,
+                                   crop=False,
+                                   quality=100)
+            return format_html('<img src="{}" width="{}" height="{}">'.format(_relative_id_or_passport_page_2.url, _relative_id_or_passport_page_2.width, _relative_id_or_passport_page_2.height))
+        return ""
+                 
     
        
     INITIAL_FEEDBACK = (

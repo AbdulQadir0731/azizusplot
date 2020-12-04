@@ -10,6 +10,20 @@ class PlotAdmin(admin.ModelAdmin):
     list_filter = ('status' ,)
     fields = ('name' ,
     'initial_feedback' ,
+    'seller_photo' ,
+    'id_or_passport_page_1',
+    'id_or_passport_page_1_preview',
+    'id_or_passport_page_2',
+    'id_or_passport_page_2_preview',
+    'id_or_passport_page_3',
+    'id_or_passport_page_3_preview',
+    'relative_id_or_passport_page_1',
+    'relative_id_or_passport_page_1_preview',
+    'relative_id_or_passport_page_2',
+    'relative_id_or_passport_page_2_preview',
+   
+   
+
     'status' ,
     'initial_contact_1' , 
     'initial_contact_2' ,
@@ -145,6 +159,26 @@ class PlotAdmin(admin.ModelAdmin):
     ) 
 
     
+    def seller_photo_preview(self, obj):
+        return obj.seller_photo_preview
+
+    def id_or_passport_page_1_preview(self, obj):
+        return obj.id_or_passport_page_1_preview
+
+    def id_or_passport_page_2_preview(self, obj):
+        return obj.id_or_passport_page_2_preview
+
+    def id_or_passport_page_3_preview(self, obj):
+        return obj.id_or_passport_page_3_preview 
+
+    def relative_id_or_passport_page_1_preview(self, obj):
+        return obj.relative_id_or_passport_page_1_preview
+
+    def relative_id_or_passport_page_2_preview(self, obj):
+        return obj.relative_id_or_passport_page_2_preview
+
+          
+
 
     def initial_information_preview(self, obj):
         return obj.initial_information_preview
@@ -262,6 +296,31 @@ class PlotAdmin(admin.ModelAdmin):
 
     def mul_dolil20preview(self, obj):
         return obj.mul_dolil20preview                                              
+
+
+    seller_photo_preview.short_description = 'seller_photo_preview Preview'
+    seller_photo_preview.allow_tags = True
+
+    
+    id_or_passport_page_1_preview.short_description = 'id_or_passport_page_1_preview Preview'
+    id_or_passport_page_1_preview.allow_tags = True
+
+    id_or_passport_page_2_preview.short_description = 'id_or_passport_page_2_preview Preview'
+    id_or_passport_page_2_preview.allow_tags = True
+
+    id_or_passport_page_3_preview.short_description = 'id_or_passport_page_3_preview Preview'
+    id_or_passport_page_3_preview.allow_tags = True
+
+    
+
+    relative_id_or_passport_page_1_preview.short_description = 'relative_id_or_passport_page_1_preview Preview'
+    relative_id_or_passport_page_1_preview.allow_tags = True
+
+    relative_id_or_passport_page_2_preview.short_description = 'relative_id_or_passport_page_2_preview Preview'
+    relative_id_or_passport_page_2_preview.allow_tags = True
+
+  
+
 
 
     initial_information_preview.short_description = 'initial_information_preview Preview'
