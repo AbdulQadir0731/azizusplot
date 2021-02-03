@@ -1,10 +1,16 @@
 from django.contrib import admin
 from .models import Plot
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 
 
+class PlotResource(resources.ModelResource):
+    
+    class Meta:
+        model = Plot
 
-
-class PlotAdmin(admin.ModelAdmin):
+class PlotAdmin(ImportExportModelAdmin):
+    resource_class = PlotResource
     list_display = ('name' , 'status')
     search_fields = ('name' , )
     list_filter = ('status' ,)

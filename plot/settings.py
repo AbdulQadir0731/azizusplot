@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ploting',
     'sorl.thumbnail',
+    'import_export',
 ]
 
 MIDDLEWARE = [
